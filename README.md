@@ -1,6 +1,6 @@
 # TravelAG WebApp built with React JS
 
-## Live
+## Check it Live
 
 Direct link: [https://travel-ag.netlify.app](https://travel-ag.netlify.app)
 
@@ -10,7 +10,7 @@ Step 1: Download/clone git repo.\
 Step 2: Open TravelAG project with VS Code.\
 Step 3: run script `npm install` to install all the node modules.\
 Step 4: run script `npm start` to run/deploy project on local host.\
-Step 5: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
+Step 5: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Available Scripts
 
