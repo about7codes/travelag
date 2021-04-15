@@ -97,6 +97,7 @@ img {
 .place-b {
   text-align: center;
   padding-bottom: 10px;
+  font-size: 20px;
 }
 
 .place-b h4 {
@@ -106,6 +107,7 @@ img {
 }
 
 .place-b button {
+  font-size: 16px;
   border-radius: 30px;
   border: 0;
   cursor: pointer;
