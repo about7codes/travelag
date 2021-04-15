@@ -38,6 +38,10 @@ img {
   margin: 0 auto;
 }
 
+.head-main {
+  text-align: center;
+}
+
 .places {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -47,8 +51,8 @@ img {
   padding: 10px;
   padding-bottom: 50px;
   height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
+  // overflow: hidden;
+  // overflow-y: auto;
   scrollbar-color: #0f0f0f transparent;
   scrollbar-width: thin;
 }
@@ -56,7 +60,8 @@ img {
 .place {
   animation: anipoof 1s;
   box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
+  border-radius: 6px;
+  background-color: #fff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -231,6 +236,39 @@ img {
     flex: 1;
     span:nth-child(1) {
       font-weight: bold;
+    }
+  }
+}
+
+.final {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 10px;
+  &-inner {
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding-bottom: 10px;
+    p {
+      font-size: 18px;
+      margin: 0;
+      margin-bottom: 20px;
+      span {
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+    .book {
+      display: inline-block;
+      font-size: 20px;
+      border-radius: 30px;
+      border: 0;
+      cursor: pointer;
+      background: linear-gradient(to right, #42275a, #734b6d);
+      color: #eef2f7;
+      padding: 5px 20px;
     }
   }
 }

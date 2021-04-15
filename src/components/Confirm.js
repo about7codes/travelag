@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Confirm = ({ data }) => {
-    console.log(data);
+    // console.log(data);
     return (
         <div className='confirm-box'>
             <h4 className='head'>Complete - Review your application</h4>
@@ -50,8 +50,9 @@ const Confirm = ({ data }) => {
                 <Link to='/application'>
                     <span>Back</span>
                 </Link>
-
-                <button className='confirm'>Finish</button>
+                <Link to='/final'>
+                    <button className='confirm'>Finish</button>
+                </Link>
             </div>
         </div>
     )

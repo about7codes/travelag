@@ -35,6 +35,10 @@ img {
   margin: 0 auto;
 }
 
+.head-main {
+  text-align: center;
+}
+
 .places {
   display: -ms-grid;
   display: grid;
@@ -46,8 +50,6 @@ img {
   padding: 10px;
   padding-bottom: 50px;
   height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
   scrollbar-color: #0f0f0f transparent;
   scrollbar-width: thin;
 }
@@ -57,7 +59,8 @@ img {
           animation: anipoof 1s;
   -webkit-box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
+  border-radius: 6px;
+  background-color: #fff;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -308,5 +311,44 @@ img {
 
 .confirm-b span:nth-child(1) {
   font-weight: bold;
+}
+
+.final {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  padding: 10px;
+}
+
+.final-inner {
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding-bottom: 10px;
+}
+
+.final-inner p {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.final-inner p span {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.final-inner .book {
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#42275a), to(#734b6d));
+  background: linear-gradient(to right, #42275a, #734b6d);
+  color: #eef2f7;
+  padding: 5px 20px;
 }
 /*# sourceMappingURL=styles.css.map */

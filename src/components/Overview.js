@@ -27,7 +27,7 @@ const Overview = ({ location }) => {
                     <span>Back</span>
                 </Link>
                 <Link to='/application'>
-                    <button className='start'>Start</button>
+                    <button className='start' onClick={() => localStorage.clear()}>Start</button>
                 </Link>
             </div>
         </div>

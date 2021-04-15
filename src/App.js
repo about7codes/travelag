@@ -5,6 +5,7 @@ import Form from './components/Form';
 import Overview from './components/Overview';
 import Places from './components/Places';
 import data from './data.json';
+import Final from './components/Final';
 
 const App = () => {
     const [areas, setAreas] = useState([]);
@@ -35,6 +36,9 @@ const App = () => {
             </Route>
             <Route path='/confirm'>
                 <Confirm data={formData} />
+            </Route>
+            <Route path='/final'>
+                <Final data={formData} />
             </Route>
         </Switch>
     )
