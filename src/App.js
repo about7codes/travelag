@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router';
+import Confirm from './components/Confirm';
+import Form from './components/Form';
+import Overview from './components/Overview';
+import Places from './components/Places';
+import data from './data.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [areas, setAreas] = useState([]);
+    const [curArea, setCurArea] = useState();
+    const [formData, setFormData] = useState()
+    useEffect(() => {
+        setAreas(data);
+    }, []);
+
+    const selected = (val) => {
+        setCurArea(areas[val - 1]);
+    }
+    const handleFormData = (formVal) => {
+        // console.log(formVal);
+        setFormData(formVal);
+    }
+
+    return (
+        <Switch>
+            <Route path='/' exact>
+                <Places areas={areas} selected={selected} />
+            </Route>
+            <Route path='/overview'>
+                <Overview location={curArea} />
+            </Route>
+            <Route path='/application'>
+                <Form location={curArea} allFormData={handleFormData} />
+            </Route>
+            <Route path='/confirm'>
+                <Confirm data={formData} />
+            </Route>
+        </Switch>
+    )
 }
 
 export default App;
