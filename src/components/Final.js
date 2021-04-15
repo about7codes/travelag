@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const Final = ({ data }) => {
-    console.log(data);
+const Final = ({ data, containerVariants }) => {
+    
     return (
-        <div className='final'>
+        <motion.div className='final'
+            variants={containerVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+        >
             <div className='final-inner'>
                 <p>
                     Thank you <span>{`${data.firstName} ${data.lastName}`} </span> 
@@ -14,7 +20,7 @@ const Final = ({ data }) => {
                     <span className='book'>Book again</span>
                 </Link>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

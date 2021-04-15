@@ -1,16 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, useLocation } from 'react-router';
 import Confirm from './components/Confirm';
 import Form from './components/Form';
 import Overview from './components/Overview';
 import Places from './components/Places';
 import data from './data.json';
 import Final from './components/Final';
+import { AnimatePresence } from 'framer-motion';
+
+const containerVariants = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: { delay: 1, duration: 1 }
+    },
+    exit: {
+        opacity: 0,
+        transition: { ease: 'easeInOut' }
+    }
+}
 
 const App = () => {
     const [areas, setAreas] = useState([]);
     const [curArea, setCurArea] = useState();
-    const [formData, setFormData] = useState()
+    const [formData, setFormData] = useState();
+    const location = useLocation();
     useEffect(() => {
         setAreas(data);
     }, []);
@@ -24,23 +40,25 @@ const App = () => {
     }
 
     return (
-        <Switch>
-            <Route path='/' exact>
-                <Places areas={areas} selected={selected} />
-            </Route>
-            <Route path='/overview'>
-                <Overview location={curArea} />
-            </Route>
-            <Route path='/application'>
-                <Form location={curArea} allFormData={handleFormData} />
-            </Route>
-            <Route path='/confirm'>
-                <Confirm data={formData} />
-            </Route>
-            <Route path='/final'>
-                <Final data={formData} />
-            </Route>
-        </Switch>
+        <AnimatePresence>
+            <Switch location={location} key={location.key}>
+                <Route path='/' exact>
+                    <Places areas={areas} containerVariants={containerVariants} selected={selected} />
+                </Route>
+                <Route path='/overview'>
+                    <Overview location={curArea} containerVariants={containerVariants} />
+                </Route>
+                <Route path='/application'>
+                    <Form location={curArea} allFormData={handleFormData} containerVariants={containerVariants} />
+                </Route>
+                <Route path='/confirm'>
+                    <Confirm data={formData} containerVariants={containerVariants} />
+                </Route>
+                <Route path='/final'>
+                    <Final data={formData} containerVariants={containerVariants} />
+                </Route>
+            </Switch>
+        </AnimatePresence>
     )
 }
 

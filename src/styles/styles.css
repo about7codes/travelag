@@ -35,8 +35,22 @@ img {
   margin: 0 auto;
 }
 
+.places-container {
+  padding-top: 24px;
+}
+
 .head-main {
   text-align: center;
+}
+
+.head-main h1 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.head-main h4 {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .places {
@@ -55,8 +69,6 @@ img {
 }
 
 .place {
-  -webkit-animation: anipoof 1s;
-          animation: anipoof 1s;
   -webkit-box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
   border-radius: 6px;
@@ -71,7 +83,14 @@ img {
           flex-direction: column;
 }
 
+.place:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .place-a img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   display: block;
 }
 

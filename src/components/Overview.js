@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-const Overview = ({ location }) => {
+const Overview = ({ location, containerVariants }) => {
     // console.log(location)
     const history = useHistory()
     useEffect(() => {
@@ -11,7 +12,12 @@ const Overview = ({ location }) => {
         
     }, [])
     return (
-        <div className='overview'>
+        <motion.div className='overview'
+            variants={containerVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+        >
             <div className='ov-a'>
                 <h2>{location.location} <span>Travel Guide</span></h2>
                 <h4>{location.country}</h4>
@@ -30,7 +36,7 @@ const Overview = ({ location }) => {
                     <button className='start' onClick={() => localStorage.clear()}>Start</button>
                 </Link>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

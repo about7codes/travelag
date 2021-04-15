@@ -38,8 +38,20 @@ img {
   margin: 0 auto;
 }
 
+.places-container {
+  padding-top: 24px;
+}
+
 .head-main {
   text-align: center;
+  h1 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
 }
 
 .places {
@@ -58,15 +70,21 @@ img {
 }
 
 .place {
-  animation: anipoof 1s;
+  // animation: anipoof 1s;
   box-shadow: 0 0 0.5em 0.2em rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   background-color: #fff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
   &-a {
     img {
+      transition: all 0.3s ease;
       display: block;
     }
   }

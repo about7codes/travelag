@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const Confirm = ({ data }) => {
+const Confirm = ({ data, containerVariants }) => {
     // console.log(data);
     return (
-        <div className='confirm-box'>
+        <motion.div className='confirm-box'
+            variants={containerVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+        >
             <h4 className='head'>Complete - Review your application</h4>
             <div className='confirm'>
                 <div className='confirm-a'>
@@ -54,7 +60,7 @@ const Confirm = ({ data }) => {
                     <button className='confirm'>Finish</button>
                 </Link>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
