@@ -8,6 +8,7 @@ import data from './data.json';
 import Final from './components/Final';
 import { AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+import Footer from './components/Footer';
 
 const containerVariants = {
     hidden: {
@@ -63,6 +64,7 @@ const App = () => {
                     <Final data={formData} containerVariants={containerVariants} />
                 </Route>
             </Switch>
+            <Footer />
         </AnimatePresence>
     )
 }
