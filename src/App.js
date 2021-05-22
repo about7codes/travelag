@@ -7,6 +7,7 @@ import Places from './components/Places';
 import data from './data.json';
 import Final from './components/Final';
 import { AnimatePresence } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const containerVariants = {
     hidden: {
@@ -41,6 +42,10 @@ const App = () => {
 
     return (
         <AnimatePresence>
+            <nav>
+                <h1>Travel AG</h1>
+                <NavLink to='/'>Home</NavLink>
+            </nav>
             <Switch location={location} key={location.key}>
                 <Route path='/' exact>
                     <Places areas={areas} containerVariants={containerVariants} selected={selected} />

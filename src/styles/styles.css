@@ -25,6 +25,44 @@ body::-webkit-scrollbar-thumb {
   background-color: #42275a;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #6441a5;
+  background: -webkit-gradient(linear, left top, right top, from(#6441a5), to(#2a0845));
+  background: linear-gradient(to right, #6441a5, #2a0845);
+  color: #fff;
+  padding: 0 40px;
+  -webkit-box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+nav a {
+  /* margin-right: 40px; */
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #6441a5;
+}
+
 img {
   max-width: 100%;
 }
@@ -66,6 +104,13 @@ img {
   height: 100vh;
   scrollbar-color: #0f0f0f transparent;
   scrollbar-width: thin;
+}
+
+@media only screen and (max-width: 430px) {
+  .places {
+    -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 
 .place {

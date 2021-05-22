@@ -28,6 +28,35 @@ body {
   }
 }
 
+nav {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6441a5;
+  background: linear-gradient(to right, #6441a5, #2a0845);
+  color: #fff;
+  padding: 0 40px;
+  box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+nav a {
+  /* margin-right: 40px; */
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #6441a5;
+}
+
 img {
   max-width: 100%;
 }
@@ -67,6 +96,9 @@ img {
   // overflow-y: auto;
   scrollbar-color: #0f0f0f transparent;
   scrollbar-width: thin;
+  @media only screen and (max-width: 430px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 
 .place {
