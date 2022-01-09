@@ -33,6 +33,17 @@ body::-webkit-scrollbar-thumb {
       grid-template-rows: auto 1fr auto;
 }
 
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-content {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,12 +84,6 @@ nav a:hover {
 
 img {
   max-width: 100%;
-}
-
-#root {
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .places-container {

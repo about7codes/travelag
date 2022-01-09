@@ -23,7 +23,7 @@ const Footer = () => {
                 </ul>
 
                 <div className="to-top">
-                <a className="rocket" href="#intro">
+                <a className="rocket" href="#root">
                     <img src="/travel.png" alt="ico" /> <br />
                     <p id="trick">Beam me up, Scotty!</p>
                 </a>

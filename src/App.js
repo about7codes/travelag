@@ -47,23 +47,25 @@ const App = () => {
                 <h1>Travel AG</h1>
                 <NavLink to='/'>Home</NavLink>
             </nav>
-            <Switch location={location} key={location.key}>
-                <Route path='/' exact>
-                    <Places areas={areas} containerVariants={containerVariants} selected={selected} />
-                </Route>
-                <Route path='/overview'>
-                    <Overview location={curArea} containerVariants={containerVariants} />
-                </Route>
-                <Route path='/application'>
-                    <Form location={curArea} allFormData={handleFormData} containerVariants={containerVariants} />
-                </Route>
-                <Route path='/confirm'>
-                    <Confirm data={formData} containerVariants={containerVariants} />
-                </Route>
-                <Route path='/final'>
-                    <Final data={formData} containerVariants={containerVariants} />
-                </Route>
-            </Switch>
+            <div className="main-content">
+                <Switch location={location} key={location.key}>
+                    <Route exact path='/'>
+                        <Places areas={areas} containerVariants={containerVariants} selected={selected} />
+                    </Route>
+                    <Route path='/overview'>
+                        <Overview location={curArea} containerVariants={containerVariants} />
+                    </Route>
+                    <Route path='/application'>
+                        <Form location={curArea} allFormData={handleFormData} containerVariants={containerVariants} />
+                    </Route>
+                    <Route path='/confirm'>
+                        <Confirm data={formData} containerVariants={containerVariants} />
+                    </Route>
+                    <Route path='/final'>
+                        <Final data={formData} containerVariants={containerVariants} />
+                    </Route>
+                </Switch>
+            </div>
             <Footer />
         </AnimatePresence>
     )
